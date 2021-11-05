@@ -3,5 +3,13 @@
 
 <h1>Poke Deets</h1>
 <h2><%= pokemon.name %></h2>
+<img src="<%= pokemon.imageUrl %>" alt="<%= pokemon.name %>">
+<h2><%= pokemon.weight %></h2>
+
+<% if (user.profile._id.equals(profile._id) || user.isAdmin) { %>
+  <form action="/profiles/<%= profile._id %>/pokemon/<%= pokemon._id %>/feed" method="POST">
+    <button>Feed <%= pokemon.name %></button>
+  </form>
+<% } %>
 
 <%- include('../partials/footer') %>

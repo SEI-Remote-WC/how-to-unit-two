@@ -38,8 +38,21 @@ function pokeShow(req, res) {
   })
 }
 
+function feed(req, res) {
+  Profile.findById(req.params.profileId)
+  .then(profile => {
+    let index = profile.pokemon.findIndex(item => item._id == req.params.pokemonId)
+    profile.pokemon[index].weight += 1
+    profile.save()
+    .then(()=> {
+      res.redirect(`/profiles/${req.params.profileId}/pokemon/${req.params.pokemonId}`)
+    })
+  })
+}
+
 export {
   addToCollection,
   pokeDex,
-  pokeShow
+  pokeShow,
+  feed
 }
