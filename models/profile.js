@@ -11,6 +11,7 @@ const commentSchema = new Schema({
 const pokemonSchema = new Schema ({
   name: String,
   weight: Number,
+  imageUrl: String,
   comments: [commentSchema]
 }, {
   timestamps: true

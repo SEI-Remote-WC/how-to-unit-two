@@ -1,0 +1,15 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<h1>PokeDex</h1>
+<% profile.pokemon.forEach(pokemon => { %>
+  <div>
+    <a href="/profiles/<%= profile._id %>/pokemon/<%= pokemon._id %>">
+      <h2><%= pokemon.name %></h2>
+      <img src="<%= pokemon.imageUrl %>" alt="<%= pokemon.name %>">
+    </a>
+  </div>
+<% }) %>
+
+
+<%- include('../partials/footer') %>

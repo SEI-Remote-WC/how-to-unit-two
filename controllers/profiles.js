@@ -13,6 +13,23 @@ function addToCollection(req, res) {
   })
 }
 
+function pokeDex(req, res) {
+  Profile.findById(req.params.id)
+  .then(profile => {
+    res.render('profiles/pokeDex', {
+      title: `${profile.name}'s PokeDex`,
+      user: req.user,
+      profile
+    })
+  })
+}
+
+function pokeShow(req, res) {
+  
+}
+
 export {
-  addToCollection
+  addToCollection,
+  pokeDex,
+  pokeShow
 }

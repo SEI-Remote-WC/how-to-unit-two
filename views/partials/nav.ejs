@@ -12,6 +12,7 @@
         <input name="query" type="text" placeholder="Search for Pokemon">
         <button type="submit">Search</button>
       </form>
+      <a href="/profiles/<%= user.profile._id %>/pokemon">My pokemon</a>
     <% } else { %>
       <a href="/auth/google" class="siwg-link">
         <button type="submit" class="siwg">
