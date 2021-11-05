@@ -8,6 +8,10 @@
       <a href="/auth/logout">
         <button type="submit">Logout</button>
       </a>
+      <form action="/pokeSearch" method="POST">
+        <input name="query" type="text" placeholder="Search for Pokemon">
+        <button type="submit">Search</button>
+      </form>
     <% } else { %>
       <a href="/auth/google" class="siwg-link">
         <button type="submit" class="siwg">
