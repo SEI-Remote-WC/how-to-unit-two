@@ -25,7 +25,17 @@ function pokeDex(req, res) {
 }
 
 function pokeShow(req, res) {
-  
+  Profile.findById(req.params.profileId)
+  .then(profile => {
+    console.log(profile)
+    let index = profile.pokemon.findIndex(item => item._id == req.params.pokemonId)
+    res.render('profiles/pokeShow', {
+      title: `${profile.name}'s Pokemon`,
+      user: req.user,
+      profile,
+      pokemon: profile.pokemon[index]
+    })
+  })
 }
 
 export {
